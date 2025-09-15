@@ -1,0 +1,18 @@
+[package]
+name = "tomu_usb_simple_client"
+version = "0.1.0"
+authors = ["Michael Farrell <micolous+git@gmail.com>"]
+description = "A Rust client for the Tomu usb_simple app (LED control)"
+edition = "2021"
+keywords = ["tomu", "usb", "led"]
+repository = "https://github.com/micolous/tomu-usb-simple-client"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+futures-lite = "2.5"
+nusb = { version = "0.2.0", features = ["tokio"] }
+thiserror = "1.0.30"
+
+[dev-dependencies.tokio]
+version = "1.32.0"
+features = ["macros", "rt-multi-thread"]
