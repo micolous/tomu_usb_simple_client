@@ -1,6 +1,6 @@
 [package]
 name = "tomu_usb_simple_client"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Michael Farrell <micolous+git@gmail.com>"]
 description = "A Rust client for the Tomu usb_simple app (LED control)"
 edition = "2021"
