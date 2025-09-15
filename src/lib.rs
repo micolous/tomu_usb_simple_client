@@ -8,6 +8,8 @@
 //! # #[tokio::main]
 //! # async fn main() -> Result {
 //! let mut tomu = TomuUsbSimple::open().await?;
+//!
+//! // Turn on the red LED.
 //! tomu.led(Colour::Red).await?;
 //! # Ok(())
 //! # }
