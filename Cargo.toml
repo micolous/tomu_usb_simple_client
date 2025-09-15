@@ -5,7 +5,7 @@ authors = ["Michael Farrell <micolous+git@gmail.com>"]
 description = "A Rust client for the Tomu usb_simple app (LED control)"
 edition = "2021"
 keywords = ["tomu", "usb", "led"]
-repository = "https://github.com/micolous/tomu-usb-simple-client"
+repository = "https://github.com/micolous/tomu_usb_simple_client"
 license = "MIT OR Apache-2.0"
 
 [dependencies]
