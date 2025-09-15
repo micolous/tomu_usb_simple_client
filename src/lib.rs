@@ -26,18 +26,26 @@ use nusb::{
 use std::time::Duration;
 use thiserror::Error;
 
+/// Result type wrapper.
 pub type Result<T = ()> = std::result::Result<T, Error>;
 
+/// Tomu errors.
 #[derive(Debug, Error)]
 pub enum Error {
+    /// Device not found.
     #[error("Device not found")]
     DeviceNotFound,
+
+    /// [`NUsbError`][]
     #[error("USB error: {0}")]
     NUsbError(#[from] NUsbError),
+
+    /// [`TransferError`][]
     #[error("USB transfer error: {0}")]
     TransferError(#[from] TransferError),
 }
 
+/// Tomu `usb_simple` device connection.
 pub struct TomuUsbSimple {
     #[cfg(target_os = "windows")]
     interface: Interface,
@@ -46,16 +54,27 @@ pub struct TomuUsbSimple {
     device: Device,
 }
 
+/// Tomu LED colours.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
 #[repr(u16)]
 pub enum Colour {
+    /// Turn off both LEDs.
     Off = 0,
+
+    /// Turn on the green LED only.
     Green = 1,
+
+    /// Turn on the red LED only.
     Red = 2,
+
+    /// Turn on both the green and red LEDs.
     Both = 3,
 }
 
 impl TomuUsbSimple {
+    /// Open a connection to the Tomu `usb_simple` app.
+    ///
+    /// See [the crate-level docs][self] for an example.
     pub async fn open() -> Result<Self> {
         let device = nusb::list_devices()
             .await?
@@ -79,6 +98,9 @@ impl TomuUsbSimple {
 
     const TIMEOUT: Duration = Duration::from_millis(500);
 
+    /// Set the colour of the LEDs.
+    ///
+    /// See [the crate-level docs][self] for an example.
     pub async fn led(&mut self, colour: Colour) -> Result {
         let data = ControlOut {
             control_type: ControlType::Vendor,
