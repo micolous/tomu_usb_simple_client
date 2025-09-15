@@ -1,4 +1,4 @@
-# `tomu-usb-simple-client` &emsp; [![Latest Version]][crates.io] [![Docs version]][docs.rs]
+# `tomu_usb_simple_client` &emsp; [![Latest Version]][crates.io] [![Docs version]][docs.rs]
 
 A Rust client for [Tomu's][tomu] [`usb_simple` sample app][usb-simple], which activates the
 [Tomu's][tomu] LEDs in response to simple USB control commands.
@@ -17,10 +17,10 @@ A Rust client for [Tomu's][tomu] [`usb_simple` sample app][usb-simple], which ac
    cargo run --example demo
    ```
 
-[crates.io]: https://crates.io/crates/tomu-usb-simple-client
-[Docs version]: https://img.shields.io/docsrs/tomu-usb-simple-client.svg
-[docs.rs]: https://docs.rs/tomu-usb-simple-client/
-[Latest Version]: https://img.shields.io/crates/v/tomu-usb-simple-client.svg
+[crates.io]: https://crates.io/crates/tomu_usb_simple_client
+[Docs version]: https://img.shields.io/docsrs/tomu_usb_simple_client.svg
+[docs.rs]: https://docs.rs/tomu_usb_simple_client/
+[Latest Version]: https://img.shields.io/crates/v/tomu_usb_simple_client.svg
 [rustup]: https://rustup.rs/
 [tomu]: https://tomu.im/
 [usb-simple]: https://github.com/im-tomu/tomu-samples/tree/master/usb_simple
